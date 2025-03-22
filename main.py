@@ -21,7 +21,7 @@ def main():
     data = get_exchange_rates()
     if data:
         currency_data = data["conversion_rates"]
-        last_update = datetime.utcfromtimestamp(data["time_last_update_unix"]).strftime('%Y-%m-%d %H:%M:%S UTC')
+        last_update = datetime.fromtimestamp(data["time_last_update_unix"])
         
         with st.container():
             st.markdown(f"#### ⏳ Last Updated: `{last_update}`")
